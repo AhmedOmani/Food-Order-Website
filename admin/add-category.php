@@ -78,16 +78,14 @@
                     $active = "NO" ;
                 
 
-                ///upload photo
+                ///1. upload photo
                 $image_name = $_FILES['image']['name'] ;
+                ///2. rename the image to avoid replace the same image
                 $ext = end(explode('.' , $image_name)) ;
-                $image_name = "Food_Category_".rand(0 , 1000).rand(0 , 1000).'.'.$ext ;
+                $image_name = "Food_Category_".rand(0 , 1000).rand(0 , 1000).rand(0 , 1000).'.'.$ext ;
                 $image_path = $_FILES['image']['tmp_name'] ;
                 $image_destination = "../images/category/".$image_name ;
-
-                ///rename the image to avoid replace the same image
-
-                ///move file ;
+                ///3. move file ;
                 $upload = move_uploaded_file($image_path , $image_destination) ;
 
                 ///check if it is uploaded or not 

@@ -145,6 +145,9 @@ table tr td{
     font-weight: bold;
 }
 .success{
+    padding: 1%;
+    font-size: 90%;
+    font-weight: bold;
     color: #2ed573;
 }
 
