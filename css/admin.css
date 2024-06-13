@@ -39,37 +39,103 @@ table tr td{
     padding: 1%;
 }
 
-.btn-primary{
-    background-color: #1e90ff;
-    padding: 1%;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+/*btn primary style starts */
+.btn-primary {
+    background-color: #007bff; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 2%; /* Some padding */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Get it to display inline */
+    font-size: 15px; /* Increase font size */
+    margin: 4px 2px; /* Add some margin */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
-.btn-primary:hover{
-    background-color: #3742fa;
+/* Hover effects */
+.btn-primary:hover {
+    background-color: #0056b3;
 }
 
+/* Active (pressed) state */
+.btn-primary:active {
+    background-color: #004494;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.btn-primary:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed; 
+}
+
+/*btn primary style ends */
+
+/*btn secondry stlye starts*/
 .btn-secondry{
-    background-color: #7bed9f;
-    padding: 1%;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 2% ;/* Some padding */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Get it to display inline */
+    font-size: 16px; /* Increase font size */
+    margin: 4px 2px; /* Add some margin */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    border-radius: 8px; /* Rounded corners */
 }
 
 .btn-secondry:hover{
-    background-color: #2ed573;
+    background-color: #45a049;
+}
+.btn-secondry:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666; 
+    transform: translateY(4px);
 }
 
-.btn-danger{
-    background-color: #ff6b81;
-    padding: 1%;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.btn-secondry:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed; 
 }
+
+/*btn danger stlye ends*/
+
+/*btn danger stlye starts*/
+.btn-danger{
+    background-color: #f44336; 
+    border: none;
+    color: white; 
+    padding: 2%; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px; 
+    cursor: pointer; 
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+.btn-danger:hover{
+    background-color: #d32f2f;
+}
+
+.btn-danger:active {
+    background-color: #c62828; 
+    box-shadow: 0 5px #666;
+    transform: translateY(4px); 
+}
+
+.btn-danger:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed; 
+}
+
+/*btn danger stlye ends*/
 
 .btn-change{
     background-color: #6bb8ff;

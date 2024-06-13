@@ -9,28 +9,70 @@
 
         <br />
         <br />
+
+        <?php 
+            if (isset($_SESSION['add'])) {
+                echo $_SESSION['add'] ;
+                unset($_SESSION['add']) ;
+            } 
+        ?>
+        <br>
         <!-- Button to ADD Admin -->
-        <a href="" class = "btn-primary">Add Category</a>
+        <a href="<?php echo SITEURL ?>admin/add-category.php" class = "btn-primary">Add Category</a>
         <br />
         <br />
         <table class= "tbl-full">
             <tr>
-                <th>Serial Number</th>
-                <th>Full name</th>
-                <th>User Name</th>
+                <th>S.N.</th>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Feature</th>
+                <th>Active</th>
                 <th>Action</th>
+            </tr>
 
-            </tr>
-            <tr>
-                <td>1. </td>
-                <td>Ahmed Saber</td>
-                <td>Omani</td>
-                <td>
-                    <a href="#" class = "btn-secondry">Update Admin</a>
-                    <a href="#" class = "btn-danger">Delete Admin</a>
-                </td>
-            </tr>
-            
+            <?php 
+                $query = "SELECT * FROM tbl_category" ;
+                $go = mysqli_query($connect , $query) ;
+                $count = mysqli_num_rows($go) ;
+                $id = 1 ;
+                if ($count >= 1) {
+                    while($row = mysqli_fetch_assoc($go)) {
+                        $title = $row['title'] ;
+                        $image_name = $row['image_name'] ;
+                        $feature = $row['featured'] ;
+                        $active = $row['active'] ;
+                    
+            ?>
+
+                    <tr>
+                        <td> <?php echo $id++ ?> </td>
+                        <td> <?php echo $title ; ?></td>
+
+                        <td> 
+                            <img src = "<?php echo SITEURL; ?>images/category/<?php echo $image_name ;?>" width="100px">
+                        </td>
+
+                        <td> <?php echo $feature; ?> </td>
+                        <td> <?php echo $active ; ?> </td>
+                        <td>
+                            <a href="#" class = "btn-secondry">Update Category</a>
+                            <a href="#" class = "btn-danger">Delete Category</a>
+                        </td>
+                    </tr>
+
+            <?php 
+                    }   
+                } else {
+            ?>
+
+                <tr>
+                    <td ><div class = "error">No Category Added</div></td>
+                <tr>
+
+            <?php
+                }
+            ?>
 
         </table>
 
